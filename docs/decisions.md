@@ -159,3 +159,25 @@ fallback through `SUPER+SHIFT+N`.
 The repository and the live configuration under `~/.config` are currently
 separate copies. Deployment is still manual; a reproducible deployment strategy
 must be designed later rather than assumed.
+
+
+## DoomArch shell
+
+DoomArch is adopting Quickshell as the experimental foundation for its own
+desktop shell.
+
+The goal is not to reproduce a traditional permanent status bar. DoomArch
+should remain visually quiet at rest and expose information and controls when
+invoked. The current prototype uses an edge-mounted control surface toggled
+with `SUPER+A`.
+
+The shell is structured as small QML components under `config/quickshell/`.
+Its first real system integration is battery state through UPower.
+
+Quickshell runs as `doomarch-shell.service`, tied to
+`graphical-session.target`, rather than being launched from a terminal or
+directly from Hyprland. Hyprland communicates with the running shell through
+Quickshell IPC.
+
+Quickshell remains an intentional experimental dependency while the interaction
+model is explored. Its adoption is not considered irreversible.
