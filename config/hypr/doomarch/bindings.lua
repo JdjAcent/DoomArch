@@ -10,6 +10,7 @@ local launcher = "hyprlauncher"
 hl.bind(mod .. " + Q", hl.dsp.exec_cmd(terminal))
 hl.bind(mod .. " + E", hl.dsp.exec_cmd(file_manager))
 hl.bind(mod .. " + R", hl.dsp.exec_cmd(launcher))
+hl.bind(mod .. " + SHIFT + N", hl.dsp.exec_cmd(terminal .. " nmtui"))
 
 -- Window management
 hl.bind(mod .. " + C", hl.dsp.window.close())

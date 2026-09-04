@@ -139,3 +139,23 @@ after real use.
 
 Lid-close behavior remains managed by systemd-logind defaults for now and will
 be revisited when laptop-only and external-monitor behavior is refined.
+
+
+## Hyprland session ownership
+
+DoomArch explicitly suppresses selected XDG autostart entries inherited from
+installed KDE applications when they are not part of the intended Hyprland
+session.
+
+User-level XDG autostart overrides are stored in `config/autostart/`. Currently
+KClock, Kalendar reminders, and KGpg are suppressed. KDE Connect remains
+intentional, while KUnifiedPush remains available because installed
+applications depend on it.
+
+Network connectivity itself is managed by NetworkManager independently of
+Plasma. Until DoomArch has a final network UI, `nmtui` provides a reliable
+fallback through `SUPER+SHIFT+N`.
+
+The repository and the live configuration under `~/.config` are currently
+separate copies. Deployment is still manual; a reproducible deployment strategy
+must be designed later rather than assumed.
