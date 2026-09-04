@@ -30,3 +30,17 @@ instead of connector name so the configuration does not depend on `HDMI-A-1`.
 
 Monitor configuration is isolated in `doomarch/monitors.lua` so hardware-specific
 overrides can remain separate from the main Hyprland configuration.
+
+## Core keybindings and media controls
+
+`SUPER` is the main DoomArch modifier.
+
+The initial application bindings use Kitty as the terminal, Dolphin as the file
+manager, and Hyprlauncher as the launcher. These choices can be revisited as
+DoomArch evolves.
+
+Core window and workspace bindings are kept separate from hardware and media
+controls.
+
+Media controls use the existing PipeWire stack through `wpctl`. Brightness
+controls use `brightnessctl`, and media playback controls use `playerctl`.
