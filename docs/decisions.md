@@ -87,3 +87,15 @@ only keeps configuration that has been intentionally adopted or added.
 
 Workspace behavior across multiple monitors remains intentionally simple for
 now and will be revisited after real use.
+
+## Session infrastructure
+
+DoomArch uses `xdg-desktop-portal-hyprland` as the Hyprland-specific portal
+backend, with `xdg-desktop-portal-gtk` available as a generic fallback.
+
+DoomArch uses `hyprpolkitagent` as its graphical Polkit authentication agent.
+It is managed as a systemd user service rather than being launched directly
+from the Hyprland configuration.
+
+These components are independent of KDE Plasma so the Hyprland session does
+not rely on Plasma for these responsibilities.
