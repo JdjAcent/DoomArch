@@ -44,3 +44,11 @@ controls.
 
 Media controls use the existing PipeWire stack through `wpctl`. Brightness
 controls use `brightnessctl`, and media playback controls use `playerctl`.
+
+
+## Input
+
+DoomArch uses the US keyboard layout and keeps pointer sensitivity neutral.
+
+The touchpad uses traditional scrolling rather than natural scrolling. A
+three-finger horizontal gesture switches between workspaces.
