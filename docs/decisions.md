@@ -99,3 +99,43 @@ from the Hyprland configuration.
 
 These components are independent of KDE Plasma so the Hyprland session does
 not rely on Plasma for these responsibilities.
+
+
+## Session management
+
+DoomArch runs Hyprland through UWSM.
+
+UWSM integrates the Wayland session with the systemd user manager and activates
+`graphical-session.target`. Persistent session components should prefer systemd
+user services when suitable units are available instead of being launched
+directly from `hyprland.lua`.
+
+The direct Hyprland session remains available temporarily as a recovery path
+while DoomArch is under development.
+
+## Desktop services
+
+The initial standalone Hyprland session uses:
+
+- `hyprpolkitagent` for graphical Polkit authentication.
+- `swaync` for notifications and notification history.
+- `cliphist` with `wl-clipboard` for clipboard history.
+- `hyprlock` for session locking.
+- `hypridle` for idle handling and automatic suspension.
+
+SwayNC currently displays some markup from KDE Connect notifications literally.
+This is a known issue to revisit when notification styling and integration are
+developed.
+
+## Lock and idle behavior
+
+`SUPER + L` locks the session with Hyprlock.
+
+Hypridle locks the session after 5 minutes of inactivity and suspends the
+machine after 15 minutes. These timings are initial defaults and may be adjusted
+after real use.
+
+`SUPER + SHIFT + E` exits the DoomArch session through UWSM.
+
+Lid-close behavior remains managed by systemd-logind defaults for now and will
+be revisited when laptop-only and external-monitor behavior is refined.

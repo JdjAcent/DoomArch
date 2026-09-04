@@ -14,7 +14,9 @@ hl.bind(mod .. " + R", hl.dsp.exec_cmd(launcher))
 -- Window management
 hl.bind(mod .. " + C", hl.dsp.window.close())
 hl.bind(mod .. " + V", hl.dsp.window.float({ action = "toggle" }))
-
+-- Session
+hl.bind(mod .. " + L", hl.dsp.exec_cmd("hyprlock"))
+hl.bind(mod .. " + SHIFT + E", hl.dsp.exec_cmd("uwsm stop"))
 -- Focus
 hl.bind(mod .. " + left",  hl.dsp.focus({ direction = "left" }))
 hl.bind(mod .. " + right", hl.dsp.focus({ direction = "right" }))
