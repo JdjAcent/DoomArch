@@ -1,27 +1,40 @@
 import json
 import sys
 
+from doom.agent import run
+from doom.dispatcher import invoke
+from doom.capabilities import CAPABILITIES
 from doom.audio import get_audio, set_muted, set_volume
 from doom.battery import get_battery
 
 
 def main():
     args = sys.argv[1:]
+    
+    if len(args) >= 2 and args[0] == "agent":
+        user_request = " ".join(args[1:])
+        result = run(user_request)
 
-    if args == ["system", "battery"]:
-        result = get_battery()
+    elif args == ["invoke"]:
+        result = invoke_json()
+
+    elif args == ["capabilities"]:
+        result = CAPABILITIES
+
+    elif args == ["system", "battery"]:
+        result = invoke("system.battery")
 
     elif args == ["audio", "get"]:
-        result = get_audio()
+        result = invoke("audio.get")
 
     elif len(args) == 3 and args[:2] == ["audio", "set-volume"]:
-        result = set_volume(float(args[2]))
+        result = invoke("audio.set-volume",{"volume":float(args[2])},)
 
     elif args == ["audio", "mute"]:
-        result = set_muted(True)
+        result = invoke("audio.mute")
 
     elif args == ["audio", "unmute"]:
-        result = set_muted(False)
+        result = invoke("audio.unmute")
 
     else:
         print(
@@ -34,6 +47,13 @@ def main():
 
     print(json.dumps(result, indent=2))
 
+def invoke_json():
+    request = json.load(sys.stdin)
+
+    capability = request["capability"]
+    arguments = request.get("arguments", {})
+
+    return invoke(capability, arguments)
 
 if __name__ == "__main__":
     main()

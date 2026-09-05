@@ -99,3 +99,25 @@ behind an abstraction layer.
 
 The first planned step is a small Doom Runtime experiment with deterministic,
 structured system capabilities and no language model.
+
+
+
+### First functional spike
+
+The first Doom Agent spike has completed an end-to-end local action:
+
+owner language → local model → structured tool call → runtime validation →
+capability dispatch → system backend.
+
+Qwen3 0.6B Q4_0 through llama.cpp is currently used only as an experimental
+local brain. The model is replaceable and is not part of Doom's identity.
+
+The agent uses structured tool definitions derived from Doom capabilities rather
+than unrestricted shell execution. Runtime validation remains authoritative:
+model-generated calls that violate capability contracts are rejected before
+execution.
+
+On the current laptop, keeping the model server resident consumes too much
+memory relative to the available 8 GB. The brain should therefore be treated as
+an on-demand resource while the lightweight Doom Runtime remains independently
+available. This lifecycle policy may differ on future hardware.
