@@ -49,7 +49,8 @@ PanelWindow {
                 color: "#44ffffff"
             }
 
-            PowerStatus {}
+	    PowerStatus {}
+	    AudioStatus {}
         }
     }
 }

@@ -181,3 +181,12 @@ Quickshell IPC.
 
 Quickshell remains an intentional experimental dependency while the interaction
 model is explored. Its adoption is not considered irreversible.
+
+
+The control surface favors visual representations of system state that can also
+serve as part of the composition rather than separating information from
+decoration.
+
+Audio is integrated directly through Quickshell's PipeWire service. The current
+audio component follows the default sink reactively and allows volume to be
+changed directly from the control surface.
