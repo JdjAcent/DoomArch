@@ -190,3 +190,20 @@ decoration.
 Audio is integrated directly through Quickshell's PipeWire service. The current
 audio component follows the default sink reactively and allows volume to be
 changed directly from the control surface.
+
+
+## Doom Runtime
+
+DoomArch is beginning to expose deterministic system capabilities through a
+local Doom Runtime.
+
+The initial Python implementation is an architectural spike, not a commitment
+to Python as the permanent runtime language. Its purpose is to explore stable
+capability contracts independently of Linux backend details.
+
+The first capabilities are battery state through UPower/D-Bus and default audio
+state/control through WirePlumber's `wpctl`. `doomctl` currently provides a
+small CLI and JSON representation for exercising these capabilities.
+
+Future agent reasoning should consume structured Doom capabilities rather than
+requiring knowledge of backend-specific commands.
