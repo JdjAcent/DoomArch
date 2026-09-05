@@ -207,3 +207,25 @@ small CLI and JSON representation for exercising these capabilities.
 
 Future agent reasoning should consume structured Doom capabilities rather than
 requiring knowledge of backend-specific commands.
+
+## Desktop connectivity
+
+The DoomArch control surface now exposes live network and Bluetooth state
+through Quickshell's native integrations.
+
+Network status shows the active Wi-Fi network and represents signal strength
+with partially filled segments. This establishes an early visual pattern:
+different kinds of system state may use different graphical representations
+instead of repeating the same generic progress bar.
+
+Bluetooth exposes adapter state and known devices and can request connections
+and disconnections directly through BlueZ. `bluetoothctl` remains a debugging
+tool rather than the intended everyday interface.
+
+Network management still uses `nmtui` as a provisional fallback while native
+network selection is deferred.
+
+The paired WF-C710N currently suffers from a dual-boot pairing issue
+(`br-connection-key-missing`). This is a backend pairing problem rather than a
+DoomArch Shell issue and should be investigated separately with backups before
+modifying Bluetooth keys.

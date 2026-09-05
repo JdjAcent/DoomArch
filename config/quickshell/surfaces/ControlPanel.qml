@@ -51,6 +51,8 @@ PanelWindow {
 
 	    PowerStatus {}
 	    AudioStatus {}
+	    NetworkStatus {}
+	    BluetoothStatus {}
         }
     }
 }
