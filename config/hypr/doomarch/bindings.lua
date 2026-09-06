@@ -4,7 +4,8 @@ local mod = "SUPER"
 
 local terminal = "kitty"
 local file_manager = "dolphin"
-local launcher = "hyprlauncher"
+local launcher = "fuzzel"
+local clipboard = [[sh -c 'cliphist list | fuzzel --dmenu | cliphist decode | wl-copy']]
 
 -- Applications
 hl.bind(mod .. " + Q", hl.dsp.exec_cmd(terminal))
@@ -14,6 +15,11 @@ hl.bind(mod .. " + SHIFT + N", hl.dsp.exec_cmd(terminal .. " nmtui"))
 hl.bind(
     mod .. " + A",
     hl.dsp.exec_cmd("qs ipc call doom toggle")
+)
+
+hl.bind(
+    mod .. " + SHIFT + V",
+    hl.dsp.exec_cmd(clipboard)
 )
 
 -- Window management
