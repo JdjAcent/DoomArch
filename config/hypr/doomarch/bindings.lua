@@ -39,3 +39,18 @@ end
 -- Mouse window manipulation
 hl.bind(mod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
+
+-- Screenshots
+hl.bind(
+    "Print",
+    hl.dsp.exec_cmd(
+        [[sh -c 'file="$(xdg-user-dir PICTURES)/Screenshot-$(date +%Y%m%d-%H%M%S).png"; grim "$file" && wl-copy --type image/png < "$file"']]
+    )
+)
+
+hl.bind(
+    mod .. " + Print",
+    hl.dsp.exec_cmd(
+        [[sh -c 'file="$(xdg-user-dir PICTURES)/Screenshot-$(date +%Y%m%d-%H%M%S).png"; grim -g "$(slurp)" "$file" && wl-copy --type image/png < "$file"']]
+    )
+)
