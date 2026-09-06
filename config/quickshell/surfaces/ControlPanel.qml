@@ -53,6 +53,7 @@ PanelWindow {
 	    AudioStatus {}
 	    NetworkStatus {}
 	    BluetoothStatus {}
+	    SessionControls {}
         }
     }
 }
