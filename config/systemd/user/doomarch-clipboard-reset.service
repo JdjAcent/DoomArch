@@ -1,0 +1,11 @@
+[Unit]
+Description=Reset DoomArch transient clipboard history
+Before=cliphist.service
+PartOf=graphical-session.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/cliphist wipe
+
+[Install]
+WantedBy=graphical-session.target
