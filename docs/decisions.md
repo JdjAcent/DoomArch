@@ -229,3 +229,28 @@ The paired WF-C710N currently suffers from a dual-boot pairing issue
 (`br-connection-key-missing`). This is a backend pairing problem rather than a
 DoomArch Shell issue and should be investigated separately with backups before
 modifying Bluetooth keys.
+
+
+## Basic desktop autonomy
+
+DoomArch has established a usable autonomous Hyprland session without relying
+on Plasma as desktop infrastructure.
+
+The session now provides its own lock and idle lifecycle, notifications,
+control surface, audio controls, network and Bluetooth visibility, session
+actions, screenshots, launcher, clipboard history and working screencast
+portals.
+
+Removable storage is intentionally mounted on demand through UDisks rather than
+automatically. A native storage surface may be added later if useful.
+
+Fuzzel currently serves as a lightweight provisional launcher and picker.
+`nmtui` remains a provisional network-management fallback. These tools solve
+current interaction needs without committing DoomArch to their long-term UX.
+
+KDE applications and services may remain when independently useful, but Plasma
+is no longer treated as required infrastructure for the Hyprland session.
+
+Known issues and deferred improvements include the WF-C710N dual-boot Bluetooth
+pairing problem, richer network management, pinned clipboard items, removable
+storage UI and improved screencast selection UX.
