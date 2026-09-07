@@ -1,5 +1,6 @@
 import QtQuick
 import Quickshell
+import "../theme"
 
 Column {
     id: root
@@ -11,7 +12,7 @@ Column {
 
     Text {
         text: root.expanded ? "SESSION  ⌄" : "SESSION  ›"
-        color: "#88ffffff"
+        color: Theme.textMuted
         font.pixelSize: 12
 
         MouseArea {
@@ -33,7 +34,7 @@ Column {
 
         Text {
             text: "Lock"
-            color: "#ccffffff"
+            color: Theme.textSecondary
 
             MouseArea {
                 anchors.fill: parent
@@ -44,7 +45,7 @@ Column {
 
         Text {
             text: "Suspend"
-            color: "#ccffffff"
+            color: Theme.textSecondary
 
             MouseArea {
                 anchors.fill: parent
@@ -55,7 +56,7 @@ Column {
 
         Text {
             text: "Logout"
-            color: "#ccffffff"
+            color: Theme.textSecondary
 
             MouseArea {
                 anchors.fill: parent
@@ -66,7 +67,7 @@ Column {
 
         Text {
             text: "Reboot"
-            color: "#ccffffff"
+            color: Theme.textSecondary
 
             MouseArea {
                 anchors.fill: parent
@@ -77,7 +78,7 @@ Column {
 
         Text {
             text: "Power off"
-            color: "#ccffffff"
+            color: Theme.textSecondary
 
             MouseArea {
                 anchors.fill: parent
@@ -96,7 +97,7 @@ Column {
                 ? "Reboot DoomArch?"
                 : "Power off DoomArch?"
 
-            color: "white"
+            color: Theme.textPrimary
             font.pixelSize: 16
         }
 
@@ -105,7 +106,7 @@ Column {
 
             Text {
                 text: "Cancel"
-                color: "#88ffffff"
+                color: Theme.textMuted
                 font.pixelSize: 13
 
                 MouseArea {
@@ -117,7 +118,7 @@ Column {
 
             Text {
                 text: "Confirm"
-                color: "white"
+                color: Theme.textPrimary
                 font.pixelSize: 13
 
                 MouseArea {

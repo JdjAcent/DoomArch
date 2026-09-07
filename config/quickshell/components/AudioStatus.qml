@@ -1,5 +1,6 @@
 import QtQuick
 import Quickshell.Services.Pipewire
+import "../theme"
 
 Column {
     id: root
@@ -12,7 +13,7 @@ Column {
 
     Text {
         text: "AUDIO"
-        color: "#88ffffff"
+        color: Theme.textMuted
         font.pixelSize: 12
     }
 
@@ -21,7 +22,7 @@ Column {
             ? Math.round(Pipewire.defaultAudioSink.audio.volume * 100) + "%"
             : "..."
 
-        color: "white"
+        color: Theme.textPrimary
         font.pixelSize: 18
     }
 
@@ -29,7 +30,7 @@ Column {
         width: 240
         height: 6
         radius: 3
-        color: "#33ffffff"
+        color: Theme.track
 
         Rectangle {
             width: parent.width
@@ -37,7 +38,7 @@ Column {
 
             height: parent.height
             radius: parent.radius
-            color: "white"
+            color: Theme.textPrimary
 
             Behavior on width {
                 NumberAnimation {

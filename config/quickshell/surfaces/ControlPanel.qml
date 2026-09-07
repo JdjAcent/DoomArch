@@ -1,6 +1,7 @@
 import QtQuick
 import Quickshell
 
+import "../theme"
 import "../components"
 
 PanelWindow {
@@ -27,7 +28,7 @@ PanelWindow {
         anchors.margins: 16
 
         radius: 20
-        color: "#ee15151b"
+        color: Theme.surface
 
         Column {
             anchors {
@@ -39,14 +40,14 @@ PanelWindow {
 
             Text {
                 text: "DoomArch"
-                color: "white"
+                color: Theme.textPrimary
                 font.pixelSize: 26
             }
 
             Rectangle {
                 width: parent.width
                 height: 1
-                color: "#44ffffff"
+                color: Theme.divider
             }
 
 	    PowerStatus {}

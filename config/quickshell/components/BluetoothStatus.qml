@@ -1,5 +1,6 @@
 import QtQuick
 import Quickshell.Bluetooth
+import "../theme"
 
 Column {
     id: root
@@ -22,7 +23,7 @@ Column {
 
     Text {
         text: "BLUETOOTH"
-        color: "#88ffffff"
+        color: Theme.textMuted
         font.pixelSize: 12
 
         MouseArea {
@@ -43,7 +44,7 @@ Column {
             anchors.verticalCenter: parent.verticalCenter
 
             color: root.connectedDevice
-                ? "white"
+                ? Theme.textPrimary
                 : "#44ffffff"
         }
 
@@ -61,7 +62,7 @@ Column {
                 return "On"
             }
 
-            color: "white"
+            color: Theme.textPrimary
             font.pixelSize: 18
         }
     }
@@ -101,13 +102,13 @@ Column {
                     anchors.verticalCenter: parent.verticalCenter
 
                     color: deviceRow.modelData.connected
-                        ? "white"
-                        : "#33ffffff"
+                        ? Theme.textPrimary
+                        : Theme.track
                 }
 
                 Text {
                     text: deviceRow.modelData.name
-                    color: "#ccffffff"
+                    color: Theme.textSecondary
                     font.pixelSize: 13
                 }
 

@@ -36,7 +36,7 @@ Column {
 
     Text {
         text: "NETWORK"
-        color: "#88ffffff"
+        color: Theme.textMuted
         font.pixelSize: 12
 
         MouseArea {
@@ -52,7 +52,7 @@ Column {
             ? root.activeNetwork.name
             : "Disconnected"
 
-        color: "white"
+        color: Theme.textPrimary
         font.pixelSize: 18
     }
 
@@ -70,7 +70,7 @@ Column {
                 width: 54
                 height: 6
                 radius: 3
-                color: "#33ffffff"
+                color: Theme.track
 
                 property real fill: root.activeNetwork
                     ? Math.max(
@@ -86,7 +86,7 @@ Column {
                     width: parent.width * segment.fill
                     height: parent.height
                     radius: parent.radius
-                    color: "white"
+                    color: Theme.textPrimary
 
                     Behavior on width {
                         NumberAnimation {
