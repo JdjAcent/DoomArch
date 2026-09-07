@@ -14,7 +14,7 @@ Column {
     Text {
         text: "AUDIO"
         color: Theme.textMuted
-        font.pixelSize: 12
+        font.pixelSize: Theme.textSizeLabel
     }
 
     Text {
@@ -23,7 +23,7 @@ Column {
             : "..."
 
         color: Theme.textPrimary
-        font.pixelSize: 18
+        font.pixelSize: Theme.textSizePrimary
     }
 
     Rectangle {

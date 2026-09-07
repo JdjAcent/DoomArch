@@ -37,7 +37,7 @@ Column {
     Text {
         text: "NETWORK"
         color: Theme.textMuted
-        font.pixelSize: 12
+        font.pixelSize: Theme.textSizeLabel
 
         MouseArea {
             anchors.fill: parent
@@ -53,7 +53,7 @@ Column {
             : "Disconnected"
 
         color: Theme.textPrimary
-        font.pixelSize: 18
+        font.pixelSize: Theme.textSizePrimary
     }
 
     Row {
@@ -104,7 +104,7 @@ Column {
 
         text: "Manage network"
         color: "#bbffffff"
-        font.pixelSize: 13
+        font.pixelSize: Theme.textSizeBody
 
         MouseArea {
             anchors.fill: parent

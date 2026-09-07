@@ -13,7 +13,7 @@ Column {
     Text {
         text: root.expanded ? "SESSION  ⌄" : "SESSION  ›"
         color: Theme.textMuted
-        font.pixelSize: 12
+        font.pixelSize: Theme.textSizeLabel
 
         MouseArea {
             anchors.fill: parent
@@ -107,7 +107,7 @@ Column {
             Text {
                 text: "Cancel"
                 color: Theme.textMuted
-                font.pixelSize: 13
+                font.pixelSize: Theme.textSizeBody
 
                 MouseArea {
                     anchors.fill: parent
@@ -119,7 +119,7 @@ Column {
             Text {
                 text: "Confirm"
                 color: Theme.textPrimary
-                font.pixelSize: 13
+                font.pixelSize: Theme.textSizeBody
 
                 MouseArea {
                     anchors.fill: parent

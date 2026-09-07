@@ -24,7 +24,7 @@ Column {
     Text {
         text: "BLUETOOTH"
         color: Theme.textMuted
-        font.pixelSize: 12
+        font.pixelSize: Theme.textSizeLabel
 
         MouseArea {
             anchors.fill: parent
@@ -63,7 +63,7 @@ Column {
             }
 
             color: Theme.textPrimary
-            font.pixelSize: 18
+            font.pixelSize: Theme.textSizePrimary
         }
     }
 
@@ -75,7 +75,7 @@ Column {
 
         text: "No devices connected"
         color: "#66ffffff"
-        font.pixelSize: 12
+        font.pixelSize: Theme.textSizeLabel
     }
 
     Column {
@@ -109,7 +109,7 @@ Column {
                 Text {
                     text: deviceRow.modelData.name
                     color: Theme.textSecondary
-                    font.pixelSize: 13
+                    font.pixelSize: Theme.textSizeBody
                 }
 
                 Text {
@@ -118,7 +118,7 @@ Column {
                         : "Connect"
 
                     color: "#77ffffff"
-                    font.pixelSize: 12
+                    font.pixelSize: Theme.textSizeLabel
 
                     MouseArea {
                         anchors.fill: parent

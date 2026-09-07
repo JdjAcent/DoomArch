@@ -11,4 +11,8 @@ QtObject {
     readonly property color divider: "#44ffffff"
 
     readonly property color surface: "#ee15151b"
+
+    readonly property int textSizeLabel: 12
+    readonly property int textSizeBody: 13
+    readonly property int textSizePrimary: 18
 }
