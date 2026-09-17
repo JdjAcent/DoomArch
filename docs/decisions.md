@@ -12,8 +12,12 @@ laptop, device names, paths, or other machine-specific details.
 
 ## KDE Plasma
 
-KDE Plasma remains installed and functional as a stable fallback while the
-Hyprland environment is developed.
+KDE Plasma remains temporarily available as a safety net while DoomArch reaches
+sufficient autonomy. It is not intended to remain a permanent desktop fallback;
+the long-term goal is to remove Plasma once DoomArch can stand on its own.
+
+Useful KDE applications may remain independently when they provide value without
+making DoomArch structurally dependent on Plasma.
 
 ## Documentation language
 
@@ -156,9 +160,13 @@ Network connectivity itself is managed by NetworkManager independently of
 Plasma. Until DoomArch has a final network UI, `nmtui` provides a reliable
 fallback through `SUPER+SHIFT+N`.
 
-The repository and the live configuration under `~/.config` are currently
-separate copies. Deployment is still manual; a reproducible deployment strategy
-must be designed later rather than assumed.
+During development, the repository is the source of truth for the Quickshell
+configuration. The live `$XDG_CONFIG_HOME/quickshell` path links to the
+repository checkout so the configuration being tested is the configuration
+being versioned.
+
+The link itself is machine-local and its source path is not versioned.
+A portable deployment mechanism for fresh installations remains to be designed.
 
 
 ## DoomArch shell
