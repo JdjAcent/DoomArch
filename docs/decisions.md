@@ -199,6 +199,19 @@ Audio is integrated directly through Quickshell's PipeWire service. The current
 audio component follows the default sink reactively and allows volume to be
 changed directly from the control surface.
 
+### Visual foundations
+
+Shared visual values are expressed through semantic roles in
+`config/quickshell/theme/Theme.qml`. Components consume roles such as primary
+or muted text rather than depending directly on a specific theme palette.
+
+Only visual patterns that have already emerged across the shell are promoted
+to shared roles. Experimental spacing, geometry, radii, motion, and isolated
+colors remain local until their semantics become clear.
+
+This foundation is intentionally smaller than a theme engine. Multiple themes
+remain a future possibility, but their switching and deployment model have not
+been designed yet.
 
 ## Doom Runtime
 
