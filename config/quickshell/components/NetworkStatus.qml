@@ -36,7 +36,7 @@ Column {
 
     Text {
         text: "NETWORK"
-        color: Theme.textMuted
+        color: "#88ffffff"
         font.pixelSize: Theme.textSizeLabel
 
         MouseArea {
@@ -52,7 +52,7 @@ Column {
             ? root.activeNetwork.name
             : "Disconnected"
 
-        color: Theme.textPrimary
+        color: "white"
         font.pixelSize: Theme.textSizePrimary
     }
 
